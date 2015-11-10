@@ -17,22 +17,46 @@
 		<![endif]-->	
 	</head>
 	<body>
-		<h1 class="text-center">KnockoutJS + Bootstrap Pagination Component</h1>
+		<div class="container">
+			
+		
+			<h1 class="text-center">KnockoutJS + Bootstrap Pagination Component</h1>
 
-		<ko-pagination 
-			class="text-center"
-			params="recordCount : recordCount, 
-					pageSize : pageSize, 
-					page: page, 
-					numberOfLinks : 10,
-					labelPrev : 'Prev',
-					labelNext : 'Next'">
-		</ko-pagination>
+			<div class="row">
 
-		<footer>
-			<p class="well text-right"><small>Created by Cleyton Tonholi</small></p>
-		</footer>
+				<ko-pagination 
+					params="recordCount : recordCount, 
+							pageSize : pageSize, 
+							page: page, 
+							numberOfLinks : numberOfLinks,
+							labels : { first: 'First', last: 'Last', prev: 'Prev', next: 'Next', infoInitial: 'You are viewing page', infoOf: 'of' }">
+				</ko-pagination>
+			</div>
 
+		
+			<form class="row">
+			<h4>Change the parameters and check it out</h4>
+			  <div class="form-group col-md-2">
+			    <label>Record count</label>
+			    <input type="number" class="form-control n" data-bind="value: recordCount">
+			    <span class="help-block">Total of records</span>
+			  </div>
+			  <div class="form-group col-md-2">
+			    <label>Page size</label>
+			    <input type="number" class="form-control" data-bind="value: pageSize">
+			    <span class="help-block">Items per page</span>
+			  </div>
+			  <div class="form-group col-md-2">
+			    <label>Number of links</label>
+			    <input type="number" class="form-control" data-bind="value: numberOfLinks">
+			    <span class="help-block">Quantity of links to display</span>
+			  </div>
+			</form>
+
+			<footer>
+				<p class="well text-right"><small>Created by Cleyton Tonholi</small></p>
+			</footer>
+		</div>
 		<!-- Bootstrap JavaScript -->
 		<script src="//code.jquery.com/jquery.js"></script>
 		<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>

@@ -1,11 +1,14 @@
 function ViewModel()
 {
 	this.recordCount = ko.observable(61);
-	this.pageSize = ko.observable(5);
+	this.pageSize = ko.observable(10);
 	this.page = ko.observable(1);
-
-	this.page.subscribe(p => {
-		console.log("page", p);
+	this.numberOfLinks = ko.observable(5);
+	
+	this.pessoas = ko.observableArray([])
+	this.page.subscribe((p) => {
+		console.log(p);
+		
 		//Do AJAX calls here
 	});
 }

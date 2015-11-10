@@ -17,9 +17,8 @@ In your HTML
 			params="recordCount : myRecordCount, 
 					pageSize : myPageSize, 
 					page: myPage, 
-					numberOfLinks : 10,
-					labelPrev : 'Prev',
-					labelNext : 'Next'">
+					numberOfLinks : myNumberOfLinks,
+					labels : { first: 'First', last : 'Last', prev: 'Prev', next: 'Next', infoInitial : 'You are viewing page', infoOf: 'of' }">
 		</ko-pagination>
 		
 		<script src="//cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
@@ -36,6 +35,7 @@ function ViewModel()
 	this.myRecordCount = ko.observable(6);	//total of records 
 	this.myPageSize = ko.observable(5);		//items per page
 	this.myPage = ko.observable(1);			//current page
+	this.myNumberOfLinks = ko.observable(5); //number of links to display
 
 	//Subscribe for page change
 	this.myPage.subscribe(p => {

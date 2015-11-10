@@ -4,11 +4,13 @@ var babel = require("gulp-babel");
 var uglify = require('gulp-uglify');
 
 gulp.task("build", function () {
-	return gulp.src("src/**/*.js")
+	var result = gulp.src("src/**/*.js")
 		.pipe(plumber())
-	    .pipe(babel())
+	    .pipe(babel({
+            presets: ['es2015']
+        }))
 	    //.pipe(uglify())
-		.pipe(gulp.dest("dist")); 
+	    .pipe(gulp.dest("dist")); 
 });
 
 gulp.task("default", ['build'], function () {
